@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="12dp"
+    app:cardBackgroundColor="@color/motocare_surface"
+    app:cardCornerRadius="12dp"
+    app:cardElevation="2dp"
+    app:strokeWidth="0dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="8dp">
+
+            <TextView
+                android:id="@+id/tvHistoryDate"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="27 Okt 2026, 21:00"
+                android:textColor="@color/motocare_text_secondary"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/tvHistoryRisk"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/ic_launcher_background"
+                android:paddingHorizontal="8dp"
+                android:paddingVertical="2dp"
+                android:text="SEDANG"
+                android:textColor="@color/white"
+                android:textSize="10sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tvHistoryTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Aki Lemah atau Masalah Kelistrikan"
+            android:textColor="@color/motocare_primary"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="4dp" />
+
+        <TextView
+            android:id="@+id/tvHistoryVehicle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Motor Matic • Honda BeAT"
+            android:textColor="@color/motocare_text_secondary"
+            android:textSize="13sp" />
+
+    </LinearLayout>
+</com.google.android.material.card.MaterialCardView>

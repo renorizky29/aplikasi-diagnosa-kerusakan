@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/motocare_bg"
+    tools:context=".HistoryActivity">
+
+    <!-- Top Navigation Bar -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:background="@color/motocare_surface"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingHorizontal="16dp"
+        android:elevation="4dp">
+
+        <ImageView
+            android:id="@+id/ivBack"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:clickable="true"
+            android:focusable="true"
+            android:padding="6dp"
+            android:src="@android:drawable/ic_menu_revert"
+            android:contentDescription="Kembali"
+            app:tint="@color/white" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:text="Riwayat Diagnosa"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <!-- Top Bar -->
+        <LinearLayout
+            android:id="@+id/topBar"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="16dp"
+            android:gravity="center_vertical"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Riwayat Diagnosa"
+                    android:textColor="@color/white"
+                    android:textSize="22sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Catatan pemeriksaan motor sebelumnya"
+                    android:textColor="@color/motocare_secondary"
+                    android:textSize="14sp" />
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/btnClearHistory"
+                android:layout_width="wrap_content"
+                android:layout_height="36dp"
+                android:backgroundTint="#3F3F46"
+                android:text="Hapus"
+                android:textColor="#FCA5A5"
+                android:textSize="12sp"
+                app:cornerRadius="8dp" />
+        </LinearLayout>
+
+        <!-- Search View -->
+        <androidx.appcompat.widget.SearchView
+            android:id="@+id/svHistory"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginBottom="12dp"
+            android:background="@color/motocare_surface"
+            app:iconifiedByDefault="false"
+            app:queryHint="Cari riwayat (cth: aki, rem, BeAT)..."
+            app:layout_constraintTop_toBottomOf="@id/topBar"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <!-- RecyclerView -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvHistory"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:paddingHorizontal="16dp"
+            app:layout_constraintTop_toBottomOf="@id/svHistory"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:listitem="@layout/item_history" />
+
+        <TextView
+            android:id="@+id/tvEmptyHistory"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Belum ada riwayat diagnosa."
+            android:textColor="@color/motocare_secondary"
+            android:textSize="15sp"
+            android:visibility="gone"
+            app:layout_constraintTop_toBottomOf="@id/svHistory"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>

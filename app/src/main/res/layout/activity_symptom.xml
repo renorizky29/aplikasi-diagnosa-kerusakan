@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/motocare_bg"
+    tools:context=".SymptomActivity">
+
+    <!-- Top Navigation Bar -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:background="@color/motocare_surface"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingHorizontal="16dp"
+        android:elevation="4dp">
+
+        <ImageView
+            android:id="@+id/ivBack"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:clickable="true"
+            android:focusable="true"
+            android:padding="6dp"
+            android:src="@android:drawable/ic_menu_revert"
+            android:contentDescription="Kembali"
+            app:tint="@color/white" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:text="Gejala Kendaraan"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Gejala Kendaraan"
+                android:textColor="@color/motocare_primary"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="4dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Tuliskan keluhan secara manual dan/atau centang gejala tambahan di bawah"
+                android:textColor="@color/motocare_text_secondary"
+                android:textSize="14sp"
+                android:layout_marginBottom="20dp" />
+
+            <!-- Manual Symptom Input Card -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                app:cardBackgroundColor="@color/motocare_surface"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="2dp"
+                app:strokeWidth="0dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Deskripsi Gejala Manual"
+                        android:textColor="@color/motocare_primary"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:layout_marginBottom="12dp" />
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        app:boxCornerRadiusTopStart="12dp"
+                        app:boxCornerRadiusTopEnd="12dp"
+                        app:boxCornerRadiusBottomStart="12dp"
+                        app:boxCornerRadiusBottomEnd="12dp">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/etManualSymptoms"
+                            android:layout_width="match_parent"
+                            android:layout_height="120dp"
+                            android:gravity="top|start"
+                            android:hint="Cth: Starter elektrik tidak merespons, rem blong, dll..."
+                            android:inputType="textMultiLine|textCapSentences"
+                            android:scrollbars="vertical" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Additional Checkbox Symptoms Section -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Pilih Gejala Tambahan (Opsional)"
+                android:textColor="@color/motocare_primary"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="8dp" />
+
+            <TextView
+                android:id="@+id/tvSelectedCount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0 gejala tambahan dipilih"
+                android:textColor="@color/motocare_secondary"
+                android:textSize="13sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="12dp" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvSymptoms"
+                android:layout_width="match_parent"
+                android:layout_height="280dp"
+                android:layout_marginBottom="20dp"
+                tools:listitem="@layout/item_symptom" />
+
+            <!-- Action Buttons -->
+            <Button
+                android:id="@+id/btnProcessDiagnosis"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:layout_marginBottom="12dp"
+                android:backgroundTint="@color/motocare_primary"
+                android:text="Proses Diagnosa"
+                android:textColor="@color/motocare_surface"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:cornerRadius="12dp" />
+
+            <Button
+                android:id="@+id/btnReset"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:backgroundTint="#3F3F46"
+                android:text="Reset / Hapus"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:cornerRadius="12dp" />
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

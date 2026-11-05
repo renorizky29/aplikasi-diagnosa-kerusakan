@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">MotoCare</string>
+    <string name="app_subtitle">Diagnosa Awal Kerusakan Motor</string>
+    <string name="home_title">Kenali masalah motormu</string>
+    <string name="home_desc">Aplikasi panduan pemeriksaan awal kondisi sepeda motor secara mandiri dan cepat.</string>
+    <string name="btn_start_diagnosis">Mulai Diagnosa</string>
+    <string name="menu_history">Riwayat Diagnosa</string>
+    <string name="menu_guide">Panduan Penggunaan</string>
+    <string name="disclaimer_text">Catatan: Hasil diagnosa adalah perkiraan awal berdasarkan gejala, bukan kepastian kerusakan mutlak. Selalu lakukan pemeriksaan oleh mekanik profesional.</string>
+</resources>
